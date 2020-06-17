@@ -1,0 +1,50 @@
+.main-content {
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+
+    .left {
+        display: flex;
+        width: 50%;
+        flex-direction: column;
+        margin: 10px;
+
+        .text {
+            display: flex;
+            width: 100%;
+            min-height: 600px;
+            margin-bottom: 20px;
+        }
+
+        .d-button{
+            display: flex;
+            justify-content: center;
+            width: 100%;
+           
+        }
+
+    }
+
+    .right {
+        width: 48%;
+        margin: 10px;
+
+        h2 {
+            display: flex;
+            justify-content: center;
+        }
+
+        table {
+            width: 100%;
+
+            tr {
+               text-align: center;
+            }
+        }
+
+        table, th, td {
+            border: 1px solid black;
+            border-collapse: collapse;
+          }
+    }
+}

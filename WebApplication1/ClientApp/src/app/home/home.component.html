@@ -1,0 +1,41 @@
+<div class="main-content">
+  <div class="left">
+    <label>
+      <textarea class="text" (change)="doTextareaValueChange($event)"></textarea>
+    </label>
+
+    <div class="d-button">
+      <button (click)="analyze()"> Analyze </button>
+    </div>
+  </div>
+
+  <div class="right">
+      <h2> Result </h2>
+
+      <ng-template #infomessage>
+        <p> {{message}}</p>
+      </ng-template>
+
+      <table *ngIf="metric !== undefined && metric.metrics !== undefined; else infomessage" >
+        <tr>
+          <th>Metrics</th>
+          <th>Count</th>
+        </tr>
+        <tr *ngFor="let item of metric.metrics">
+          <td> {{item.title}} </td>
+          <td *ngIf="item.value.compose.length > 0; else count">
+            <ul>
+              <li *ngFor="let v of item.value.compose">
+                {{v.text}} - {{v.count}}
+              </li>
+            </ul>
+          </td>
+          <ng-template #count> <td> {{ item.value.count}}</td></ng-template>
+
+        </tr>
+      </table>
+
+
+  </div>
+
+</div>
